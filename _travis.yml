@@ -1,0 +1,45 @@
+language: cpp
+sudo: required
+
+matrix:
+  include:
+    - os: osx
+      osx_image: xcode9.2
+      compiler: clang
+      env:
+        - MATRIX_EVAL="CC=clang && CXX=clang++"
+
+    - os: linux
+      dist: trusty
+      compiler: gcc
+      env:
+        - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"
+      addons:
+        apt:
+          sources:
+            - llvm-toolchain-precise
+            - ubuntu-toolchain-r-test
+            - sourceline: 'ppa:beineri/opt-qt-5.10.1-trusty'
+            - sourceline: 'ppa:samuel-bachmann/boost'
+          packages:
+            # Workaround for "unmet dependencie" on sdl2
+            - libsdl2-dev
+            - libsdl2-image-dev
+            - libsdl2-mixer-dev
+
+before_install:
+  - eval "${MATRIX_EVAL}"
+  - scripts/.travis/install-deps-${TRAVIS_OS_NAME}.sh
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then source /opt/qt510/bin/qt510-env.sh; fi
+  - which $CXX
+  - $CXX --version
+  - mkdir -p build
+
+script:
+  - scripts/.travis/script.sh
+
+after_success:
+  - scripts/.travis/clang-format.sh
+
+notifications:
+  email: false

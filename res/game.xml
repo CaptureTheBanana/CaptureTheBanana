@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<game>
+    <fonts folder="fonts/"/>
+    <playerLayer layer="42"/>
+    <flag file="assets/flag.png"/>
+    <inputs file="data/gamecontrollerdb.txt"/>
+    <door file="assets/portal.png"/>
+    <offsets>
+        <player>24</player>
+        <door>100</door>
+    </offsets>
+    <players>
+        <player>
+            <filename>assets/player_cyan_full.png</filename>
+            <frameWidth>48</frameWidth>
+            <frameHeight>56</frameHeight>
+            <numFrames>105</numFrames>
+        </player>
+        <player>
+            <filename>assets/player_red_full.png</filename>
+            <frameWidth>48</frameWidth>
+            <frameHeight>56</frameHeight>
+            <numFrames>105</numFrames>
+        </player>
+        <player>
+            <filename>assets/player_yellow_full.png</filename>
+            <frameWidth>48</frameWidth>
+            <frameHeight>56</frameHeight>
+            <numFrames>105</numFrames>
+        </player>
+        <player>
+            <filename>assets/player_blue_full.png</filename>
+            <frameWidth>48</frameWidth>
+            <frameHeight>56</frameHeight>
+            <numFrames>105</numFrames>
+        </player>
+    </players>
+    <bots>
+        <bot filename="assets/ufo.png">
+            <name>ufo</name>
+            <num_frames>0</num_frames>
+            <frame_width>0</frame_width>
+            <frame_height>0</frame_height>
+        </bot>
+        <bot filename="assets/zombie.png">
+            <name>zombie</name>
+            <num_frames>0</num_frames>
+            <frame_width>0</frame_width>
+            <frame_height>0</frame_height>
+        </bot>
+    </bots>
+    <weapons>
+        <weapon filename="assets/gun.png">
+            <name>gun</name>
+            <range>50</range>
+            <attackspeed>200</attackspeed>
+            <damage>8</damage>
+            <special>none</special>
+        </weapon>
+    </weapons>
+    <projectiles>
+        <projectile name="bullet">
+            <sprite>assets/projectile.png</sprite>
+        </projectile>
+    </projectiles>
+    <sounds folder="sounds/"/>
+    <levels>
+        <level file="Center.xml"/>
+        <level file="Winter.xml"/>
+        <level file="Space.xml"/>
+    </levels>
+</game>

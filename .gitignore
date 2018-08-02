@@ -1,0 +1,19 @@
+# all Builds
+build/
+
+# doxygen
+docs/doxygen/
+
+# IDEs
+.vscode/
+*.user
+*.files
+*.includes
+*.config
+*.creator
+
+# OSX
+.DS_Store
+
+# Windoof
+Thumbs.db
